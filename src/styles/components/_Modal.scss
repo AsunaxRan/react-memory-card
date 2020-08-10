@@ -1,0 +1,97 @@
+.sao-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, .75);
+  z-index: $zindex-modal;
+  padding: 0 1.75rem;
+
+  &__dialog {
+    max-width: 500px;
+    margin: 5rem auto;
+  }
+
+  &__title {
+    background: linear-gradient(#E4E4E4, #F9F9F9);
+    margin-bottom: 0;
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__message {
+    min-height: 140px;
+    background-color: #D8D8D8;
+    padding: 50px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    &:before, &:after {
+      position: absolute;
+      display: block;
+      content: "";
+      height: 20px;
+      width: 100%;
+      left: 0;
+    }
+
+    &:before {
+      top: 0;
+      background: linear-gradient(rgba(4, 4, 4, .2), rgba(4, 4, 4, 0));
+    }
+
+    &:after {
+      bottom: 0;
+      background: linear-gradient(rgba(4, 4, 4, 0), rgba(4, 4, 4, .2));
+    }
+  }
+
+  &__actions {
+    background-color: $white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 90px;
+
+    .sao-btn {
+      width: 60px;
+      height: 60px;
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+    font-size: 2.5rem;
+
+    &__dialog {
+      max-width: 680px;
+    }
+
+    &__title {
+      padding: 15px;
+    }
+
+    &__message {
+      padding: 80px 30px;
+
+      &:before, &:after {
+        height: 30px;
+      }
+    }
+
+    &__actions {
+      height: 130px;
+
+      .sao-btn {
+        width: 100px;
+        height: 100px;
+      }
+    }
+  }
+}

@@ -1,0 +1,62 @@
+.linked-in {
+  position: relative;
+  min-width: 100vw;
+  min-height: 100vh;
+  z-index: 0;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    filter: blur(4px);
+    background-image: url("#{$img-root}/bg.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -1;
+  }
+}
+
+.control-panel {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  color: $white;
+  max-width: 450px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 50px;
+
+  &__title {
+    filter: drop-shadow(2px 4px 6px $black);
+  }
+
+  .login-label {
+    filter: drop-shadow(1px 2px 3px $black);
+  }
+
+  @include media-breakpoint-up(xl) {
+    padding-top: 120px;
+  }
+}
+
+.play-mode {
+  .btn {
+    font-size: 1.5rem;
+  }
+
+  .sao-btn {
+    width: 35px;
+    height: 35px;
+  }
+
+  @include media-breakpoint-up(xl) {
+    .sao-btn {
+      width: 50px;
+      height: 50px;
+    }
+  }
+}

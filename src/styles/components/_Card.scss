@@ -1,0 +1,64 @@
+.card {
+  $card: ".card";
+  $box-shadow-color: rgba(240,240,240,.75);
+
+  position: relative;
+  cursor: pointer;
+  pointer-events: auto;
+
+  &--flipped {
+    pointer-events: none;
+
+    #{$card}__content--front {
+      transform: rotateY(-180deg);
+    }
+
+    #{$card}__content--back {
+      transform: rotateY(0);
+    }
+
+    #{$card}__img {
+      box-shadow: 0px 0px 20px 0px $box-shadow-color;
+    }
+  }
+
+  &--hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  &__content {
+    width: 100%;
+    backface-visibility: hidden;
+    transition: .5s all ease;
+  }
+
+  &__content--front {
+    transform: rotateY(0);
+  }
+
+  &__content--back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotateY(180deg);
+  }
+
+  &__img {
+    display: inline-block;
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+    box-shadow: 0px 0px 5px 0px $box-shadow-color;
+    transition: .3s ease;
+  }
+
+  @include media-breakpoint-up(xl) {
+    &:hover {
+      #{$card}__img {
+        box-shadow: 0px 0px 20px 0px $box-shadow-color;
+      }
+    }
+  }
+}

@@ -1,0 +1,79 @@
+.sao-toolbar {
+  $toolbar: ".sao-toolbar";
+  $toolbar-height: 30px;
+
+  padding-left: 25px;
+
+  &__holder {
+    height: $toolbar-height;
+    padding: 10px;
+    background-color: rgba($white, .4);
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 80px;
+
+    &:before {
+      position: absolute;
+      content: "";
+      top: 0;
+      left: -25px;
+      width: 20px;
+      height: 100%;
+      background-color: rgba($white, .4);
+    }
+  }
+
+  &__symbol {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -34px;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    svg {
+      color: $body-color;
+      background-color: $white;
+      border-radius: 4px;
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+
+  &__content {
+    width: 100%;
+  }
+
+  &--blood {
+    #{$toolbar}__holder {
+      width: calc(100% - 15px);
+
+      &:after {
+        position: absolute;
+        content: "";
+        top: 0;
+        right: -15px;
+        width: 0;
+        height: 0;
+        border-top: $toolbar-height solid rgba($white, .4); 
+        border-right: 15px solid transparent; 
+      }
+    }
+
+    #{$toolbar}__content {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    #{$toolbar}__username {
+      color: $white;
+      font-size: 20px;
+      margin-right: 10px;
+    }
+  }
+}

@@ -1,0 +1,66 @@
+$img-root: "../../images";
+$font-root: "../../fonts";
+$font-family-sans-serif: "SAOUI-Regular", sans-serif;
+$font-size-base: 2rem;
+$body-color: #4d4d4d;
+$red: #d32626;
+$green: #79d70f;
+$orange: #f5a31a;
+$grid-gutter-width: 20px;
+$grid-columns: 24;
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1320px
+);
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1280px
+);
+
+%grid-column {
+  position: relative;
+  width: 100%;
+  padding: $grid-gutter-width / 2;
+}
+
+// Progress
+$progress-height: 100%;
+$progress-border-radius: 0;
+$progress-bg: transparent;
+
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/root";
+@import "~bootstrap/scss/reboot";
+@import "~bootstrap/scss/grid";
+@import "~bootstrap/scss/button-group";
+@import "~bootstrap/scss/buttons";
+@import "~bootstrap/scss/progress";
+@import "~bootstrap/scss/utilities";
+
+@import "base/fonts";
+
+@import "elements/Button";
+@import "elements/Input";
+@import "elements/Image";
+@import "elements/Progress";
+
+@import "components/App";
+@import "components/LinkedIn";
+@import "components/FullDiver";
+@import "components/Card";
+@import "components/Cards";
+@import "components/Preloader";
+@import "components/Modal";
+@import "components/ToolBar";
+@import "components/Timer";
+
+// vendors
+@import "vendors/animate";

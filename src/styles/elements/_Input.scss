@@ -1,0 +1,11 @@
+input {
+  border: none;
+  outline: 0;
+  background-color: transparent;
+  color: $orange;
+  text-align: center;
+
+  &:focus {
+    outline: 0;
+  }
+}

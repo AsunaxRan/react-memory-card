@@ -1,0 +1,64 @@
+.sao-btn {
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  border: none;
+  outline: 0;
+  cursor: pointer;
+  display: inline-block;
+
+  &:active {
+    opacity: .8;
+  }
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+.sao-btn--circle {
+  border-radius: 50%;
+}
+
+.sao-btn--cell {
+  width: 200px;
+  height: 80px;
+}
+
+.sao-btn--yes {
+  background-image: url("#{$img-root}/sao-ui/yes.svg");
+}
+
+.sao-btn--no {
+  background-image: url("#{$img-root}/sao-ui/no.svg");
+}
+
+.sao-btn--easy {
+  background-image: url("#{$img-root}/sao-ui/easy.png");
+
+  &.active {
+    background-image: url("#{$img-root}/sao-ui/easy-active.png");
+  }
+}
+
+.sao-btn--normal {
+  background-image: url("#{$img-root}/sao-ui/normal.png");
+
+  &.active {
+    background-image: url("#{$img-root}/sao-ui/normal-active.png");
+  }
+}
+
+.sao-btn--hard {
+  background-image: url("#{$img-root}/sao-ui/hard.png");
+
+  &.active {
+    background-image: url("#{$img-root}/sao-ui/hard-active.png");
+  }
+}
+
+.sao-btn--immortal {
+  color: $white;
+  background-image: url("#{$img-root}/sao-ui/immortal-red.png");
+}
