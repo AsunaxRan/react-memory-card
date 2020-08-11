@@ -3,13 +3,15 @@ import PropTypes from "prop-types";
 import classNames from "classnames";
 import { DELAY_EFFECT } from "constants/common"; 
 
-function Card({ card, handleFlipCard, handleLoadCard }) {
+function Card(props) {
+  const { 
+    card, 
+    isReady, 
+    handleFlipCard, 
+    handleLoadCard 
+  } = props;
   const [flip, setFlip] = useState(false);
   const [hidden, setHidden] = useState(false);
-
-  const handleLoad = () => {
-    handleLoadCard();
-  }
 
   const handleClick = (id, uuid) => {
     setFlip(true);
@@ -33,9 +35,10 @@ function Card({ card, handleFlipCard, handleLoadCard }) {
 
   return (
     <div className="col-6 col-lg-3">
-      <div className={classNames('card animated flipInY', {
+      <div className={classNames('card', {
           'card--flipped': flip,
-          'card--hidden': hidden
+          'card--hidden': hidden,
+          'animated flipInY': isReady
         })} 
         onClick={() => handleClick(card.id, card.uuid)}
       >
@@ -44,7 +47,7 @@ function Card({ card, handleFlipCard, handleLoadCard }) {
             className="card__img" 
             src={card.front} 
             alt="front card"
-            onLoad={handleLoad}
+            onLoad={() => handleLoadCard()}
           />
         </div>
         <div className="card__content card__content--back">
@@ -52,7 +55,7 @@ function Card({ card, handleFlipCard, handleLoadCard }) {
             className="card__img" 
             src={card.back} 
             alt="back card"
-            onLoad={handleLoad}
+            onLoad={() => handleLoadCard()}
           />
         </div>
       </div>
@@ -62,6 +65,8 @@ function Card({ card, handleFlipCard, handleLoadCard }) {
 
 Card.propTypes = {
   card: PropTypes.object.isRequired,
+  isReady: PropTypes.bool.isRequired,
+  handleLoadCard: PropTypes.func.isRequired,
   handleFlipCard: PropTypes.func.isRequired
 };
 

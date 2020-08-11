@@ -5,6 +5,7 @@ import Cards from "components/Cards";
 import Modal from "components/Modal";
 import { LinkInContext } from "contexts/LinkInContext";
 import { MESSAGE } from "constants/common";
+import PropTypes from "prop-types";
 
 function FullDiver({ fx, playFx }) {
   const { linkIn, linkInDispatch } = useContext(LinkInContext);
@@ -36,7 +37,7 @@ function FullDiver({ fx, playFx }) {
   };
 
   const counterHP = () => {
-    (HP - linkIn.level.damage > 0) 
+    (HP > linkIn.level.damage) 
     ? setHP(HP - linkIn.level.damage)
     : setHP(0);
   };
@@ -75,12 +76,13 @@ function FullDiver({ fx, playFx }) {
           user={linkIn.user} 
         />
         <Timer 
-          ready={cardsReady}
+          isReady={cardsReady}
           duration={linkIn.level.duration} 
           timeOut={finish.isFinish} 
           handleTimeOut={handleTimeOut} 
         />
         <Cards 
+          isReady={cardsReady}
           totalCards={linkIn.level.totalCards}
           handleFullCardsLoaded={handleFullCardsLoaded}
           handleFullPoint={handleFullPoint} 
@@ -97,5 +99,10 @@ function FullDiver({ fx, playFx }) {
     </div>
   );
 }
+
+FullDiver.propTypes = {
+  fx: PropTypes.object.isRequired,
+  playFx: PropTypes.func.isRequired
+};
 
 export default FullDiver;

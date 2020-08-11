@@ -36,7 +36,8 @@ function LinkedIn() {
             name="loginInput"
             type="text" 
             defaultValue={linkIn.user}
-            placeholder="Enter your username" 
+            placeholder="Enter your username"
+            autoComplete="off" 
             ref={register({ required: true, maxLength: 12 })}
           />
           <h3 className="font-weight-normal">Choose play mode</h3>
@@ -48,7 +49,7 @@ function LinkedIn() {
               >
                 <span 
                   className={classNames("sao-btn sao-btn--circle sao-btn--easy", {
-                    active: level === "easy"
+                    "active": level === "easy"
                   })}
                   title="Easy"
                 />
@@ -60,7 +61,7 @@ function LinkedIn() {
               >
                 <span 
                   className={classNames("sao-btn sao-btn--circle sao-btn--normal", {
-                    active: level === "normal"
+                    "active": level === "normal"
                   })} 
                   title="Normal"
                 />
@@ -72,7 +73,7 @@ function LinkedIn() {
               >
                 <span 
                   className={classNames("sao-btn sao-btn--circle sao-btn--hard", {
-                    active: level === "hard"
+                    "active": level === "hard"
                   })}
                   title="Hard" 
                 />

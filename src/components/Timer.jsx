@@ -3,12 +3,12 @@ import ToolBar from "components/ToolBar";
 import { FiClock } from "react-icons/fi";
 import PropTypes from "prop-types";
 
-function Timer({ ready, duration, timeOut, handleTimeOut }) {
+function Timer({ isReady, duration, timeOut, handleTimeOut }) {
   const [seconds, setSeconds] = useState(duration % 60);
   const [minutes, setMinutes] = useState(Math.floor(duration / 60));
 
   useEffect(() => {
-    if (!ready) return;
+    if (!isReady) return;
 
     const countdown = setInterval(() => {
       if (seconds === 0) {
@@ -42,6 +42,7 @@ function Timer({ ready, duration, timeOut, handleTimeOut }) {
 }
 
 Timer.propTypes = {
+  isReady: PropTypes.bool.isRequired,
   duration: PropTypes.number.isRequired,
   timeOut: PropTypes.bool.isRequired,
   handleTimeOut: PropTypes.func.isRequired

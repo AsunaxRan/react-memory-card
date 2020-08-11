@@ -3,16 +3,16 @@ export const LINK_IN = {
   levels: {
     easy: {
       title: "easy",
-      duration: 100,
+      duration: 90,
       totalCards: 12,
-      levelHP: 400,
+      levelHP: 300,
       damage: 5
     },
     normal: {
       title: "normal",
-      duration: 80,
+      duration: 70,
       totalCards: 12,
-      levelHP: 400,
+      levelHP: 350,
       damage: 10
     },
     hard: {
